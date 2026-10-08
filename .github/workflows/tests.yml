@@ -1,0 +1,18 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e ".[dev]"
+      - name: template notes are up to date with the generator
+        run: notes-to-fhir generate && git diff --exit-code src/notes_to_fhir/data
+      - run: pytest -q
+      - run: notes-to-fhir run -m baseline -o /tmp/results

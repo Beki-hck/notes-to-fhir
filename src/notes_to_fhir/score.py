@@ -41,6 +41,18 @@ def _num(x) -> float | None:
     return float(m.group()) if m else None
 
 
+MASS_TO_MG = {"mg": 1.0, "g": 1000.0, "mcg": 0.001}
+
+
+def _dose(value, unit) -> tuple[float | None, str | None]:
+    """Mass doses are compared in mg, so "1 g" equals "1000 mg" and "0.125 mg" equals "125 mcg"."""
+    v = _num(value)
+    u = T.norm_dose_unit(unit) or (T.clean(unit) or None)
+    if v is not None and u in MASS_TO_MG:
+        return round(v * MASS_TO_MG[u], 6), "mg"
+    return v, u
+
+
 def _date(x) -> str | None:
     if not x:
         return None
@@ -69,10 +81,10 @@ def canon_entities(ex: dict) -> dict[str, dict[str, dict]]:
              prefer=lambda new, old: new["clinical_status"] == "active")
     for m in ex.get("medications") or []:
         key = T.norm_medication(m.get("name")) or f"?{T.clean(m.get('name'))}"
-        unit = T.norm_dose_unit(m.get("dose_unit"))
+        value, unit = _dose(m.get("dose_value"), m.get("dose_unit"))
         _add(out["medications"], key, {
-            "dose_value": _num(m.get("dose_value")),
-            "dose_unit": unit if unit else (T.clean(m.get("dose_unit")) or None),
+            "dose_value": value,
+            "dose_unit": unit,
             "route": T.norm_route(m.get("route")) or (T.clean(m.get("route")) or None),
             "frequency": T.norm_frequency(m.get("frequency")) or (T.clean(m.get("frequency")) or None),
             "status": m.get("status") or "active",
@@ -112,8 +124,10 @@ def _split_observation(o: dict):
 def values_equal(section: str, attr: str, gold, pred) -> bool:
     if gold is None or pred is None:
         return False
-    if attr in ("value", "dose_value"):
+    if attr == "value":
         return math.isclose(float(gold), float(pred), rel_tol=0.01, abs_tol=0.11)
+    if attr == "dose_value":
+        return math.isclose(float(gold), float(pred), rel_tol=0.01)
     return gold == pred
 
 
@@ -224,7 +238,7 @@ def trap_outcomes(note: dict, pred: dict | None) -> dict[str, list[bool]]:
                 res.append(values_equal("medications", "dose_value", g["dose_value"], p.get("dose_value")))
             elif trap in ("new_med", "brand_name"):
                 res.append(k in pe["medications"])
-            elif trap in ("prior_lab", "unit_conversion"):
+            elif trap in ("prior_value", "unit_conversion"):
                 g, p = ge["observations"][k], pe["observations"].get(k, {})
                 res.append(values_equal("observations", "value", g["value"], p.get("value")))
         out[trap] = res

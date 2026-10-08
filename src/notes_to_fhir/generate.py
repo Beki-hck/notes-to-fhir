@@ -13,7 +13,7 @@ Notes include the traps that make real extraction hard:
 - dose_change:    list says 10 mg, plan says increase to 20 mg -> 20 mg
 - new_med:        "Start atorvastatin 40 mg nightly."    -> active medication
 - resolved:       "History of pneumonia, resolved."      -> clinical_status "resolved"
-- prior_lab:      "A1c 7.4% (8.1% in May)"               -> today's value only
+- prior_value:      "A1c 7.4% (8.1% in May)"               -> today's value only
 - brand_name:     "Lipitor 40 mg"                        -> atorvastatin
 - unit_conversion: weight in lb, temperature in °F       -> scored after conversion
 
@@ -328,7 +328,7 @@ def make_profile(rng: random.Random, style: str) -> Profile:
                 prior = max(prior, 0.3)
             labs.append((key, int(value) if nd == 0 else value, unit, prior))
     if any(p is not None for *_, p in labs):
-        traps.append("prior_lab")
+        traps.append("prior_value")
 
     negated = []
     if rng.random() < 0.5:
@@ -696,7 +696,7 @@ def trap_items(p: Profile) -> dict[str, list[str]]:
         "dose_change": [m.drug for m in p.meds if m.trap == "dose_change"],
         "new_med": [m.drug for m in p.meds if m.trap == "new_med"],
         "resolved": [c for c, _ in p.resolved],
-        "prior_lab": [k for k, _, _, prior in p.labs if prior is not None],
+        "prior_value": [k for k, _, _, prior in p.labs if prior is not None],
         "brand_name": [m.drug for m in p.meds if m.brand],
         "unit_conversion": [k for k, _, u in p.vitals if u in ("lb", "degF")],
     }

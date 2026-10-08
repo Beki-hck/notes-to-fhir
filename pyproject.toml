@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "notes-to-fhir"
+version = "0.1.0"
+description = "Turn clinical notes into FHIR R4 records with a local LLM, and measure field-level accuracy against gold labels."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Bereket Abebe" }]
+dependencies = ["pydantic>=2.5"]
+
+[project.optional-dependencies]
+fhir = ["fhir.resources>=7.1"]
+dev = ["pytest>=8", "fhir.resources>=7.1"]
+
+[project.scripts]
+notes-to-fhir = "notes_to_fhir.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+notes_to_fhir = ["data/*.jsonl"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

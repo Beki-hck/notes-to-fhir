@@ -132,41 +132,83 @@ def get_model(spec: str, use_schema: bool = True):
 
 
 def find_json(text: str) -> str | None:
-    """The first complete JSON object in a reply, skipping code fences and prose."""
+    """The JSON object starting at the first '{', skipping code fences and prose around it.
+
+    Returns None if that object never closes (a truncated reply; see repair_truncated).
+    """
     text = re.sub(r"```(?:json)?", "", text)
     start = text.find("{")
-    while start != -1:
-        depth, in_str, esc = 0, False, False
-        for i in range(start, len(text)):
-            ch = text[i]
-            if in_str:
-                if esc:
-                    esc = False
-                elif ch == "\\":
-                    esc = True
-                elif ch == '"':
-                    in_str = False
+    if start == -1:
+        return None
+    depth, in_str, esc = 0, False, False
+    for i in range(start, len(text)):
+        ch = text[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
             elif ch == '"':
-                in_str = True
-            elif ch == "{":
-                depth += 1
-            elif ch == "}":
-                depth -= 1
-                if depth == 0:
-                    return text[start:i + 1]
-        start = text.find("{", start + 1)
+                in_str = False
+        elif ch == '"':
+            in_str = True
+        elif ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start:i + 1]
     return None
 
 
 @dataclass
 class Parsed:
     extraction: Extraction | None
-    status: str  # ok | partial | no_json | invalid_json | schema_error
+    status: str  # ok | partial | truncated | no_json | invalid_json | schema_error
     error: str | None = None
+
+
+def repair_truncated(text: str) -> str | None:
+    """Close a JSON object that was cut off mid-reply (the model hit its token limit).
+
+    Cuts back to the last comma between complete items and closes the open
+    brackets, so the finished items survive and the half-written one is dropped.
+    """
+    start = text.find("{")
+    if start == -1:
+        return None
+    stack, in_str, esc, cut = [], False, False, None
+    for i in range(start, len(text)):
+        ch = text[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+        elif ch == '"':
+            in_str = True
+        elif ch in "{[":
+            stack.append(ch)
+        elif ch in "}]":
+            if stack:
+                stack.pop()
+        elif ch == "," and stack:
+            cut = (i, list(stack))
+    if cut is None:
+        return None
+    i, open_ = cut
+    closing = "".join("}" if b == "{" else "]" for b in reversed(open_))
+    return text[start:i] + closing
 
 
 def parse_reply(text: str) -> Parsed:
     raw = find_json(text)
+    truncated = False
+    if raw is None:
+        raw = repair_truncated(re.sub(r"```(?:json)?", "", text))
+        truncated = raw is not None
     if raw is None:
         return Parsed(None, "no_json", "no JSON object in reply")
     try:
@@ -175,9 +217,10 @@ def parse_reply(text: str) -> Parsed:
         return Parsed(None, "invalid_json", str(e))
     data = _tidy(data)
     try:
-        return Parsed(Extraction.model_validate(data), "ok")
+        ex = Extraction.model_validate(data)
+        return Parsed(ex, "truncated", "reply was cut off; kept the complete items") if truncated else Parsed(ex, "ok")
     except ValidationError as e:
-        error = str(e).splitlines()[0] + f" ({e.error_count()} errors)"
+        error = str(e).splitlines()[0]
     salvaged = _salvage(data)
     if salvaged is None:
         return Parsed(None, "schema_error", error)

@@ -41,7 +41,8 @@ CONDITIONS = {
            "htn", "high blood pressure", "essential hypertension", "hypertensive disorder"),
         _c("type 2 diabetes", "Diabetes mellitus type 2", {SNOMED: "44054006", ICD10CM: "E11.9"},
            "t2dm", "dm2", "dm ii", "type 2 diabetes mellitus", "diabetes mellitus type 2",
-           "type ii diabetes", "type ii diabetes mellitus", "diabetes type 2", "niddm"),
+           "type ii diabetes", "type ii diabetes mellitus", "diabetes type 2", "niddm",
+           "diabetes", "diabetes mellitus", "dm"),
         _c("hyperlipidemia", "Hyperlipidemia", {SNOMED: "55822004", ICD10CM: "E78.5"},
            "hld", "high cholesterol"),
         _c("asthma", "Asthma", {SNOMED: "195967001", ICD10CM: "J45.909"}, "bronchial asthma"),
@@ -66,14 +67,31 @@ CONDITIONS = {
         _c("coronary artery disease", "Coronary arteriosclerosis",
            {SNOMED: "53741008", ICD10CM: "I25.10"}, "cad", "coronary heart disease"),
         _c("heart failure", "Heart failure", {SNOMED: "84114007", ICD10CM: "I50.9"},
-           "chf", "congestive heart failure", "hf"),
+           "chf", "congestive heart failure", "hf", "hfref", "hfpef",
+           "heart failure with reduced ejection fraction", "heart failure with preserved ejection fraction"),
         _c("obesity", "Obesity", {SNOMED: "414916001", ICD10CM: "E66.9"}),
         _c("pneumonia", "Pneumonia", {SNOMED: "233604007", ICD10CM: "J18.9"},
            "community acquired pneumonia", "cap"),
         _c("urinary tract infection", "Urinary tract infectious disease",
-           {SNOMED: "68566005", ICD10CM: "N39.0"}, "uti"),
+           {SNOMED: "68566005", ICD10CM: "N39.0"}, "uti", "cystitis", "acute cystitis"),
         _c("iron deficiency anemia", "Iron deficiency anemia",
            {SNOMED: "87522002", ICD10CM: "D50.9"}, "ida", "iron-deficiency anemia"),
+        _c("obstructive sleep apnea", "Obstructive sleep apnea syndrome",
+           {SNOMED: "78275009", ICD10CM: "G47.33"}, "osa", "sleep apnea"),
+        _c("acute kidney injury", "Acute kidney injury", {SNOMED: "14669001", ICD10CM: "N17.9"},
+           "aki", "acute renal failure", "acute kidney failure"),
+        _c("benign prostatic hyperplasia", "Benign prostatic hyperplasia",
+           {SNOMED: "266569009", ICD10CM: "N40.0"}, "bph", "enlarged prostate"),
+        _c("gestational diabetes", "Gestational diabetes mellitus",
+           {SNOMED: "11687002", ICD10CM: "O24.419"}, "gdm", "gestational diabetes mellitus"),
+        _c("gout", "Gout", {SNOMED: "90560007", ICD10CM: "M10.9"}),
+        _c("insomnia", "Insomnia", {SNOMED: "193462001", ICD10CM: "G47.00"}),
+        _c("osteoporosis", "Osteoporosis", {SNOMED: "64859006", ICD10CM: "M81.0"}),
+        _c("atopic dermatitis", "Atopic dermatitis", {SNOMED: "24079001", ICD10CM: "L20.9"},
+           "eczema", "atopic eczema"),
+        _c("bipolar disorder", "Bipolar disorder", {SNOMED: "13746004", ICD10CM: "F31.9"}, "bipolar"),
+        _c("prostate cancer", "Malignant tumor of prostate", {SNOMED: "399068003", ICD10CM: "C61"}),
+        _c("ovarian cancer", "Malignant tumor of ovary", {SNOMED: "363443007", ICD10CM: "C56.9"}),
         # These appear in notes only as negated or family history, so a correct
         # extraction never contains them. They are coded so a wrong one still maps.
         _c("breast cancer", "Malignant neoplasm of breast", {SNOMED: "254837009", ICD10CM: "C50.919"}),
@@ -124,6 +142,20 @@ MEDICATIONS = {
         _c("ferrous sulfate", "ferrous sulfate", {RXNORM: "24947"}, "iron sulfate", "feso4"),
         _c("amoxicillin", "amoxicillin", {RXNORM: "723"}, "amoxil"),
         _c("nitrofurantoin", "nitrofurantoin", {RXNORM: "7454"}, "macrobid"),
+        _c("prednisone", "prednisone", {RXNORM: "8640"}),
+        _c("donepezil", "donepezil", {RXNORM: "135447"}, "aricept"),
+        _c("epinephrine", "epinephrine", {RXNORM: "3992"}, "epipen", "epinephrine auto-injector", "adrenaline"),
+        _c("tamsulosin", "tamsulosin", {RXNORM: "77492"}, "flomax"),
+        _c("allopurinol", "allopurinol", {RXNORM: "519"}, "zyloprim"),
+        _c("colchicine", "colchicine", {RXNORM: "2683"}, "colcrys"),
+        _c("trazodone", "trazodone", {RXNORM: "10737"}),
+        _c("hydroxyzine", "hydroxyzine", {RXNORM: "5553"}, "atarax", "vistaril"),
+        _c("glyburide", "glyburide", {RXNORM: "4815"}, "glibenclamide"),
+        _c("enalapril", "enalapril", {RXNORM: "3827"}, "vasotec"),
+        _c("anastrozole", "anastrozole", {RXNORM: "84857"}, "arimidex"),
+        _c("alendronate", "alendronate", {RXNORM: "46041"}, "fosamax"),
+        _c("ceftriaxone", "ceftriaxone", {RXNORM: "2193"}, "rocephin"),
+        _c("azithromycin", "azithromycin", {RXNORM: "18631"}, "zithromax", "z-pak"),
     ]
 }
 
@@ -134,7 +166,7 @@ OBSERVATIONS = {
            "systolic", "sbp", "systolic bp", "bp systolic", "blood pressure systolic"),
         _c("diastolic blood pressure", "Diastolic blood pressure", {LOINC: "8462-4"},
            "diastolic", "dbp", "diastolic bp", "bp diastolic", "blood pressure diastolic"),
-        _c("heart rate", "Heart rate", {LOINC: "8867-4"}, "hr", "pulse", "pulse rate", "p"),
+        _c("heart rate", "Heart rate", {LOINC: "8867-4"}, "hr", "pulse", "pulse rate", "p", "pr"),
         _c("respiratory rate", "Respiratory rate", {LOINC: "9279-1"}, "rr", "resp rate", "respirations"),
         _c("body temperature", "Body temperature", {LOINC: "8310-5"}, "temperature", "temp", "t"),
         _c("body weight", "Body weight", {LOINC: "29463-7"}, "weight", "wt"),
@@ -143,13 +175,16 @@ OBSERVATIONS = {
         _c("hemoglobin a1c", "Hemoglobin A1c/Hemoglobin.total in Blood", {LOINC: "4548-4"},
            "hba1c", "a1c", "hgb a1c", "glycated hemoglobin"),
         _c("glucose", "Glucose [Mass/volume] in Serum or Plasma", {LOINC: "2345-7"},
-           "blood glucose", "fasting glucose", "serum glucose", "fasting blood glucose"),
+           "blood glucose", "fasting glucose", "serum glucose", "fasting blood glucose",
+           "fbs", "fasting blood sugar", "rbs", "random blood sugar", "blood sugar"),
         _c("ldl cholesterol", "Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation",
            {LOINC: "13457-7"}, "ldl", "ldl-c", "ldl c"),
         _c("creatinine", "Creatinine [Mass/volume] in Serum or Plasma", {LOINC: "2160-0"},
            "cr", "serum creatinine", "creat"),
         _c("tsh", "Thyrotropin [Units/volume] in Serum or Plasma", {LOINC: "3016-3"},
            "thyroid stimulating hormone", "thyrotropin"),
+        _c("uric acid", "Urate [Mass/volume] in Serum or Plasma", {LOINC: "3084-1"},
+           "urate", "serum uric acid"),
     ]
 }
 
@@ -205,6 +240,8 @@ FREQUENCIES = {
                    "every 4-6 hours as needed", "q6h prn", "every 6 hours as needed",
                    "as needed for pain", "as needed for wheezing", "as needed for migraine"),
                   {}),
+    "every other day": (("every other day", "qod", "q.o.d.", "alternate days", "every 2 days", "q48h"),
+                        {"frequency": 1, "period": 2, "periodUnit": "d"}),
     "weekly": (("weekly", "once weekly", "once a week", "qweek", "q week", "every week"),
                {"frequency": 1, "period": 1, "periodUnit": "wk"}),
 }
@@ -215,6 +252,8 @@ ROUTES = {
                  "respiratory tract"), "447694001", "Respiratory tract route"),
     "subcutaneous": (("subcutaneous", "sc", "subq", "sq", "s.c.", "subcutaneously", "sub-q",
                       "injection"), "34206005", "Subcutaneous route"),
+    "intramuscular": (("intramuscular", "im", "i.m.", "intramuscularly"), "78421000", "Intramuscular route"),
+    "intravenous": (("intravenous", "iv", "i.v.", "intravenously"), "47625008", "Intravenous route"),
 }
 
 DOSE_UNITS = {
@@ -239,6 +278,7 @@ OBS_UNITS = {
     "ldl cholesterol": ("mg/dL", "mg/dL"),
     "creatinine": ("mg/dL", "mg/dL"),
     "tsh": ("mIU/L", "m[IU]/L"),
+    "uric acid": ("mg/dL", "mg/dL"),
 }
 
 UNIT_ALIASES = {
@@ -294,6 +334,15 @@ def _lookup(text: str | None, index: dict[str, str], contains: bool = True) -> s
         return index[t[:-1]]
     if not contains:
         return None
+    head = re.match(r"[\w-]+", t)
+    if head and head.group() in index and len(head.group()) <= 3:
+        # A short abbreviation at the start: "copd exacerbation", "ckd stage 3a", "oa of both knees".
+        long_hit = _lookup_contains(t, index)
+        return long_hit or index[head.group()]
+    return _lookup_contains(t, index)
+
+
+def _lookup_contains(t: str, index: dict[str, str]) -> str | None:
     best = None
     for syn, key in index.items():
         if len(syn) <= 3:
@@ -325,6 +374,8 @@ def norm_reaction(text):
 
 
 def norm_frequency(text):
+    if text is not None and re.search(r"\bp\.?r\.?n\b|as needed", str(text), re.I):
+        return "as needed"
     return _lookup(text, _FREQ_IDX)
 
 
