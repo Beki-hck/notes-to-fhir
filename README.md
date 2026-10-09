@@ -29,7 +29,7 @@ What the numbers say:
 - **Small models read negation well and status changes badly.** All three skip negated conditions (40/40) and family history, but Llama marked only 6 of 19 stopped drugs as stopped, and Qwen used the new dose in only 11 of 22 dose changes (its dose accuracy was 68%).
 - **Gemma 3 4B can't use Ollama's JSON modes here.** With the schema, and with plain JSON mode, it answered `{}` for 67 of 70 notes. With no format (`--no-format`) it wrote real JSON, but returned observations as a name-to-number dictionary without units in 69 of 70 notes, so its observation score is 0 and its schema-valid rate is 1%. Its other sections are strong (medications 97.0, allergies 98.8).
 
-Medical codes were checked against the official NLM services (RxNav, Clinical Tables, LOINC/SNOMED lookups) by `scripts/verify_codes.py`: all codes matched their official names except one lookup that timed out (SNOMED 47625008, intravenous route). See [benchmarks/2026-10-09/code-check.txt](benchmarks/2026-10-09/code-check.txt).
+Medical codes were checked against public terminology services (NLM RxNav and Clinical Tables for RxNorm and ICD-10-CM, tx.fhir.org for SNOMED CT and LOINC) by `scripts/verify_codes.py`: all codes matched their official names except one lookup that timed out (SNOMED 47625008, intravenous route). See [benchmarks/2026-10-09/code-check.txt](benchmarks/2026-10-09/code-check.txt).
 
 ## Run it
 
