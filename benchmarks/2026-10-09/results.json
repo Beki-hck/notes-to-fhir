@@ -1,0 +1,1949 @@
+{
+  "baseline": {
+    "sets": {
+      "all": {
+        "notes": 70,
+        "f1": 0.9737803909105356,
+        "precision": 0.9928710304601426,
+        "recall": 0.9554100405363268,
+        "f1_ci": [
+          0.957930921591095,
+          0.9869628198937711
+        ],
+        "fields": {
+          "correct": 3064,
+          "gold": 3207,
+          "pred": 3086
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.9189189189189189,
+            "precision": 1.0,
+            "recall": 0.85,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 58,
+                "total": 70
+              },
+              "family_name": {
+                "correct": 58,
+                "total": 70
+              },
+              "gender": {
+                "correct": 56,
+                "total": 70
+              },
+              "birth_date": {
+                "correct": 66,
+                "total": 70
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.9724137931034483,
+            "precision": 0.9791666666666666,
+            "recall": 0.9657534246575342,
+            "entity_f1": 0.9839080459770115,
+            "tp": 214,
+            "fp": 2,
+            "fn": 5,
+            "attrs": {
+              "clinical_status": {
+                "correct": 209,
+                "total": 214
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.9862353750860288,
+            "precision": 0.9916955017301038,
+            "recall": 0.9808350444900753,
+            "entity_f1": 0.9980952380952381,
+            "tp": 262,
+            "fp": 1,
+            "fn": 0,
+            "attrs": {
+              "dose_value": {
+                "correct": 242,
+                "total": 251
+              },
+              "dose_unit": {
+                "correct": 242,
+                "total": 251
+              },
+              "route": {
+                "correct": 191,
+                "total": 191
+              },
+              "frequency": {
+                "correct": 241,
+                "total": 244
+              },
+              "status": {
+                "correct": 255,
+                "total": 262
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.9433962264150945,
+            "precision": 1.0,
+            "recall": 0.8928571428571429,
+            "entity_f1": 0.9655172413793104,
+            "tp": 42,
+            "fp": 0,
+            "fn": 3,
+            "attrs": {
+              "reaction": {
+                "correct": 33,
+                "total": 36
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.9728260869565218,
+            "precision": 0.9988839285714286,
+            "recall": 0.948093220338983,
+            "entity_f1": 0.9739130434782609,
+            "tp": 448,
+            "fp": 0,
+            "fn": 24,
+            "attrs": {
+              "value": {
+                "correct": 447,
+                "total": 448
+              }
+            }
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 34,
+            "total": 34
+          },
+          "dose_change": {
+            "passed": 22,
+            "total": 22
+          },
+          "family_history": {
+            "passed": 51,
+            "total": 51
+          },
+          "negated": {
+            "passed": 38,
+            "total": 40
+          },
+          "new_med": {
+            "passed": 28,
+            "total": 28
+          },
+          "prior_value": {
+            "passed": 11,
+            "total": 14
+          },
+          "resolved": {
+            "passed": 18,
+            "total": 20
+          },
+          "stopped_med": {
+            "passed": 15,
+            "total": 19
+          },
+          "unit_conversion": {
+            "passed": 63,
+            "total": 68
+          }
+        },
+        "status": {
+          "ok": 70
+        },
+        "seconds_mean": 0.010142857142857143
+      },
+      "template": {
+        "notes": 50,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_ci": [
+          1.0,
+          1.0
+        ],
+        "fields": {
+          "correct": 2414,
+          "gold": 2414,
+          "pred": 2414
+        },
+        "sections": {
+          "patient": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 50,
+                "total": 50
+              },
+              "family_name": {
+                "correct": 50,
+                "total": 50
+              },
+              "gender": {
+                "correct": 50,
+                "total": 50
+              },
+              "birth_date": {
+                "correct": 50,
+                "total": 50
+              }
+            }
+          },
+          "conditions": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "entity_f1": 1.0,
+            "tp": 159,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "clinical_status": {
+                "correct": 159,
+                "total": 159
+              }
+            }
+          },
+          "medications": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "entity_f1": 1.0,
+            "tp": 190,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "dose_value": {
+                "correct": 188,
+                "total": 188
+              },
+              "dose_unit": {
+                "correct": 188,
+                "total": 188
+              },
+              "route": {
+                "correct": 180,
+                "total": 180
+              },
+              "frequency": {
+                "correct": 180,
+                "total": 180
+              },
+              "status": {
+                "correct": 190,
+                "total": 190
+              }
+            }
+          },
+          "allergies": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "entity_f1": 1.0,
+            "tp": 30,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "reaction": {
+                "correct": 24,
+                "total": 24
+              }
+            }
+          },
+          "observations": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "entity_f1": 1.0,
+            "tp": 363,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "value": {
+                "correct": 363,
+                "total": 363
+              }
+            }
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 23,
+            "total": 23
+          },
+          "dose_change": {
+            "passed": 17,
+            "total": 17
+          },
+          "family_history": {
+            "passed": 44,
+            "total": 44
+          },
+          "negated": {
+            "passed": 30,
+            "total": 30
+          },
+          "new_med": {
+            "passed": 20,
+            "total": 20
+          },
+          "prior_value": {
+            "passed": 8,
+            "total": 8
+          },
+          "resolved": {
+            "passed": 15,
+            "total": 15
+          },
+          "stopped_med": {
+            "passed": 10,
+            "total": 10
+          },
+          "unit_conversion": {
+            "passed": 57,
+            "total": 57
+          }
+        },
+        "status": {
+          "ok": 50
+        },
+        "seconds_mean": 0.0106
+      },
+      "handwritten": {
+        "notes": 20,
+        "f1": 0.8873720136518772,
+        "precision": 0.9672619047619048,
+        "recall": 0.819672131147541,
+        "f1_ci": [
+          0.838977194194886,
+          0.9231692677070829
+        ],
+        "fields": {
+          "correct": 650,
+          "gold": 793,
+          "pred": 672
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.6440677966101694,
+            "precision": 1.0,
+            "recall": 0.475,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 8,
+                "total": 20
+              },
+              "family_name": {
+                "correct": 8,
+                "total": 20
+              },
+              "gender": {
+                "correct": 6,
+                "total": 20
+              },
+              "birth_date": {
+                "correct": 16,
+                "total": 20
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.8974358974358975,
+            "precision": 0.9210526315789473,
+            "recall": 0.875,
+            "entity_f1": 0.9401709401709402,
+            "tp": 55,
+            "fp": 2,
+            "fn": 5,
+            "attrs": {
+              "clinical_status": {
+                "correct": 50,
+                "total": 55
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.9406528189910979,
+            "precision": 0.9635258358662614,
+            "recall": 0.9188405797101449,
+            "entity_f1": 0.993103448275862,
+            "tp": 72,
+            "fp": 1,
+            "fn": 0,
+            "attrs": {
+              "dose_value": {
+                "correct": 54,
+                "total": 63
+              },
+              "dose_unit": {
+                "correct": 54,
+                "total": 63
+              },
+              "frequency": {
+                "correct": 61,
+                "total": 64
+              },
+              "status": {
+                "correct": 65,
+                "total": 72
+              },
+              "route": {
+                "correct": 11,
+                "total": 11
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.8235294117647058,
+            "precision": 1.0,
+            "recall": 0.7,
+            "entity_f1": 0.8888888888888888,
+            "tp": 12,
+            "fp": 0,
+            "fn": 3,
+            "attrs": {
+              "reaction": {
+                "correct": 9,
+                "total": 12
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.8711340206185566,
+            "precision": 0.9941176470588236,
+            "recall": 0.7752293577981652,
+            "entity_f1": 0.8762886597938144,
+            "tp": 85,
+            "fp": 0,
+            "fn": 24,
+            "attrs": {
+              "value": {
+                "correct": 84,
+                "total": 85
+              }
+            }
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 11,
+            "total": 11
+          },
+          "dose_change": {
+            "passed": 5,
+            "total": 5
+          },
+          "family_history": {
+            "passed": 7,
+            "total": 7
+          },
+          "negated": {
+            "passed": 8,
+            "total": 10
+          },
+          "new_med": {
+            "passed": 8,
+            "total": 8
+          },
+          "prior_value": {
+            "passed": 3,
+            "total": 6
+          },
+          "resolved": {
+            "passed": 3,
+            "total": 5
+          },
+          "stopped_med": {
+            "passed": 5,
+            "total": 9
+          },
+          "unit_conversion": {
+            "passed": 6,
+            "total": 11
+          }
+        },
+        "status": {
+          "ok": 20
+        },
+        "seconds_mean": 0.009000000000000001
+      }
+    }
+  },
+  "ollama:gemma3:4b": {
+    "sets": {
+      "all": {
+        "notes": 70,
+        "f1": 0.7884758364312267,
+        "precision": 0.976069949378739,
+        "recall": 0.6613657623947614,
+        "f1_ci": [
+          0.773303504847129,
+          0.8034965034965034
+        ],
+        "fields": {
+          "correct": 2121,
+          "gold": 3207,
+          "pred": 2173
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.9285714285714286,
+            "precision": 0.9285714285714286,
+            "recall": 0.9285714285714286,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 61,
+                "total": 70
+              },
+              "family_name": {
+                "correct": 61,
+                "total": 70
+              },
+              "gender": {
+                "correct": 70,
+                "total": 70
+              },
+              "birth_date": {
+                "correct": 68,
+                "total": 70
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.9219858156028369,
+            "precision": 0.9558823529411765,
+            "recall": 0.8904109589041096,
+            "entity_f1": 0.9408983451536643,
+            "tp": 199,
+            "fp": 5,
+            "fn": 20,
+            "attrs": {
+              "clinical_status": {
+                "correct": 191,
+                "total": 199
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.9699720670391061,
+            "precision": 0.9900213827512473,
+            "recall": 0.9507186858316222,
+            "entity_f1": 0.9644268774703557,
+            "tp": 244,
+            "fp": 0,
+            "fn": 18,
+            "attrs": {
+              "dose_value": {
+                "correct": 239,
+                "total": 241
+              },
+              "dose_unit": {
+                "correct": 241,
+                "total": 241
+              },
+              "route": {
+                "correct": 191,
+                "total": 191
+              },
+              "frequency": {
+                "correct": 231,
+                "total": 242
+              },
+              "status": {
+                "correct": 243,
+                "total": 244
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.9879518072289156,
+            "precision": 1.0,
+            "recall": 0.9761904761904762,
+            "entity_f1": 1.0,
+            "tp": 45,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "reaction": {
+                "correct": 37,
+                "total": 39
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "entity_f1": 0.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 472,
+            "attrs": {}
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 32,
+            "total": 34
+          },
+          "dose_change": {
+            "passed": 20,
+            "total": 22
+          },
+          "family_history": {
+            "passed": 51,
+            "total": 51
+          },
+          "negated": {
+            "passed": 40,
+            "total": 40
+          },
+          "new_med": {
+            "passed": 28,
+            "total": 28
+          },
+          "prior_value": {
+            "passed": 0,
+            "total": 14
+          },
+          "resolved": {
+            "passed": 8,
+            "total": 20
+          },
+          "stopped_med": {
+            "passed": 2,
+            "total": 19
+          },
+          "unit_conversion": {
+            "passed": 0,
+            "total": 68
+          }
+        },
+        "status": {
+          "partial": 69,
+          "ok": 1
+        },
+        "seconds_mean": 6.801714285714286
+      },
+      "template": {
+        "notes": 50,
+        "f1": 0.7924808310660401,
+        "precision": 0.9834254143646409,
+        "recall": 0.6636288318144159,
+        "f1_ci": [
+          0.7732884399551068,
+          0.8104477611940298
+        ],
+        "fields": {
+          "correct": 1602,
+          "gold": 2414,
+          "pred": 1629
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.925,
+            "precision": 0.925,
+            "recall": 0.925,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 44,
+                "total": 50
+              },
+              "family_name": {
+                "correct": 43,
+                "total": 50
+              },
+              "gender": {
+                "correct": 50,
+                "total": 50
+              },
+              "birth_date": {
+                "correct": 48,
+                "total": 50
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.9543973941368078,
+            "precision": 0.9898648648648649,
+            "recall": 0.9213836477987422,
+            "entity_f1": 0.9641693811074918,
+            "tp": 148,
+            "fp": 0,
+            "fn": 11,
+            "attrs": {
+              "clinical_status": {
+                "correct": 145,
+                "total": 148
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.9754098360655739,
+            "precision": 0.9916666666666667,
+            "recall": 0.9596774193548387,
+            "entity_f1": 0.972972972972973,
+            "tp": 180,
+            "fp": 0,
+            "fn": 10,
+            "attrs": {
+              "dose_value": {
+                "correct": 179,
+                "total": 180
+              },
+              "dose_unit": {
+                "correct": 180,
+                "total": 180
+              },
+              "route": {
+                "correct": 180,
+                "total": 180
+              },
+              "frequency": {
+                "correct": 172,
+                "total": 180
+              },
+              "status": {
+                "correct": 180,
+                "total": 180
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.9906542056074767,
+            "precision": 1.0,
+            "recall": 0.9814814814814815,
+            "entity_f1": 1.0,
+            "tp": 30,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "reaction": {
+                "correct": 23,
+                "total": 24
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "entity_f1": 0.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 363,
+            "attrs": {}
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 22,
+            "total": 23
+          },
+          "dose_change": {
+            "passed": 16,
+            "total": 17
+          },
+          "family_history": {
+            "passed": 44,
+            "total": 44
+          },
+          "negated": {
+            "passed": 30,
+            "total": 30
+          },
+          "new_med": {
+            "passed": 20,
+            "total": 20
+          },
+          "prior_value": {
+            "passed": 0,
+            "total": 8
+          },
+          "resolved": {
+            "passed": 4,
+            "total": 15
+          },
+          "stopped_med": {
+            "passed": 0,
+            "total": 10
+          },
+          "unit_conversion": {
+            "passed": 0,
+            "total": 57
+          }
+        },
+        "status": {
+          "partial": 50
+        },
+        "seconds_mean": 6.445
+      },
+      "handwritten": {
+        "notes": 20,
+        "f1": 0.7763649962602842,
+        "precision": 0.9540441176470589,
+        "recall": 0.6544766708701135,
+        "f1_ci": [
+          0.7504051863857374,
+          0.7992253066494512
+        ],
+        "fields": {
+          "correct": 519,
+          "gold": 793,
+          "pred": 544
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.9375,
+            "precision": 0.9375,
+            "recall": 0.9375,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 17,
+                "total": 20
+              },
+              "family_name": {
+                "correct": 18,
+                "total": 20
+              },
+              "gender": {
+                "correct": 20,
+                "total": 20
+              },
+              "birth_date": {
+                "correct": 20,
+                "total": 20
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.8362068965517241,
+            "precision": 0.8660714285714286,
+            "recall": 0.8083333333333333,
+            "entity_f1": 0.8793103448275862,
+            "tp": 51,
+            "fp": 5,
+            "fn": 9,
+            "attrs": {
+              "clinical_status": {
+                "correct": 46,
+                "total": 51
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.9520958083832336,
+            "precision": 0.9845201238390093,
+            "recall": 0.9217391304347826,
+            "entity_f1": 0.9411764705882353,
+            "tp": 64,
+            "fp": 0,
+            "fn": 8,
+            "attrs": {
+              "dose_value": {
+                "correct": 60,
+                "total": 61
+              },
+              "dose_unit": {
+                "correct": 61,
+                "total": 61
+              },
+              "frequency": {
+                "correct": 59,
+                "total": 62
+              },
+              "status": {
+                "correct": 63,
+                "total": 64
+              },
+              "route": {
+                "correct": 11,
+                "total": 11
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.983050847457627,
+            "precision": 1.0,
+            "recall": 0.9666666666666667,
+            "entity_f1": 1.0,
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "reaction": {
+                "correct": 14,
+                "total": 15
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "entity_f1": 0.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 109,
+            "attrs": {}
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 10,
+            "total": 11
+          },
+          "dose_change": {
+            "passed": 4,
+            "total": 5
+          },
+          "family_history": {
+            "passed": 7,
+            "total": 7
+          },
+          "negated": {
+            "passed": 10,
+            "total": 10
+          },
+          "new_med": {
+            "passed": 8,
+            "total": 8
+          },
+          "prior_value": {
+            "passed": 0,
+            "total": 6
+          },
+          "resolved": {
+            "passed": 4,
+            "total": 5
+          },
+          "stopped_med": {
+            "passed": 2,
+            "total": 9
+          },
+          "unit_conversion": {
+            "passed": 0,
+            "total": 11
+          }
+        },
+        "status": {
+          "partial": 19,
+          "ok": 1
+        },
+        "seconds_mean": 7.6935
+      }
+    }
+  },
+  "ollama:llama3.2:3b": {
+    "sets": {
+      "all": {
+        "notes": 70,
+        "f1": 0.9397628458498023,
+        "precision": 0.9531751122514432,
+        "recall": 0.9267227938883692,
+        "f1_ci": [
+          0.9255874673629243,
+          0.9527674078883298
+        ],
+        "fields": {
+          "correct": 2972,
+          "gold": 3207,
+          "pred": 3118
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.9571428571428572,
+            "precision": 0.9571428571428572,
+            "recall": 0.9571428571428572,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 63,
+                "total": 70
+              },
+              "family_name": {
+                "correct": 65,
+                "total": 70
+              },
+              "gender": {
+                "correct": 70,
+                "total": 70
+              },
+              "birth_date": {
+                "correct": 70,
+                "total": 70
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.8841607565011821,
+            "precision": 0.9166666666666666,
+            "recall": 0.8538812785388128,
+            "entity_f1": 0.9267139479905437,
+            "tp": 196,
+            "fp": 8,
+            "fn": 23,
+            "attrs": {
+              "clinical_status": {
+                "correct": 178,
+                "total": 196
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.9488175079421107,
+            "precision": 0.9795918367346939,
+            "recall": 0.919917864476386,
+            "entity_f1": 0.980544747081712,
+            "tp": 252,
+            "fp": 0,
+            "fn": 10,
+            "attrs": {
+              "dose_value": {
+                "correct": 226,
+                "total": 247
+              },
+              "dose_unit": {
+                "correct": 217,
+                "total": 247
+              },
+              "route": {
+                "correct": 178,
+                "total": 190
+              },
+              "frequency": {
+                "correct": 224,
+                "total": 242
+              },
+              "status": {
+                "correct": 247,
+                "total": 252
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.8155339805825244,
+            "precision": 0.6885245901639344,
+            "recall": 1.0,
+            "entity_f1": 0.7563025210084033,
+            "tp": 45,
+            "fp": 29,
+            "fn": 0,
+            "attrs": {
+              "reaction": {
+                "correct": 39,
+                "total": 39
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.9595744680851064,
+            "precision": 0.9636752136752137,
+            "recall": 0.9555084745762712,
+            "entity_f1": 0.9723404255319149,
+            "tp": 457,
+            "fp": 11,
+            "fn": 15,
+            "attrs": {
+              "value": {
+                "correct": 445,
+                "total": 457
+              }
+            }
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 33,
+            "total": 34
+          },
+          "dose_change": {
+            "passed": 21,
+            "total": 22
+          },
+          "family_history": {
+            "passed": 50,
+            "total": 51
+          },
+          "negated": {
+            "passed": 40,
+            "total": 40
+          },
+          "new_med": {
+            "passed": 28,
+            "total": 28
+          },
+          "prior_value": {
+            "passed": 12,
+            "total": 14
+          },
+          "resolved": {
+            "passed": 11,
+            "total": 20
+          },
+          "stopped_med": {
+            "passed": 6,
+            "total": 19
+          },
+          "unit_conversion": {
+            "passed": 53,
+            "total": 68
+          }
+        },
+        "status": {
+          "ok": 70
+        },
+        "seconds_mean": 4.238428571428572
+      },
+      "template": {
+        "notes": 50,
+        "f1": 0.9548603821121143,
+        "precision": 0.9680715197956578,
+        "recall": 0.9420049710024855,
+        "f1_ci": [
+          0.9410245372363323,
+          0.9654454621149042
+        ],
+        "fields": {
+          "correct": 2274,
+          "gold": 2414,
+          "pred": 2349
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.99,
+            "precision": 0.99,
+            "recall": 0.99,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 49,
+                "total": 50
+              },
+              "family_name": {
+                "correct": 49,
+                "total": 50
+              },
+              "gender": {
+                "correct": 50,
+                "total": 50
+              },
+              "birth_date": {
+                "correct": 50,
+                "total": 50
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.9260450160771704,
+            "precision": 0.9473684210526315,
+            "recall": 0.9056603773584906,
+            "entity_f1": 0.9710610932475884,
+            "tp": 151,
+            "fp": 1,
+            "fn": 8,
+            "attrs": {
+              "clinical_status": {
+                "correct": 137,
+                "total": 151
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.9547970479704796,
+            "precision": 0.9838403041825095,
+            "recall": 0.9274193548387096,
+            "entity_f1": 0.9866666666666667,
+            "tp": 185,
+            "fp": 0,
+            "fn": 5,
+            "attrs": {
+              "dose_value": {
+                "correct": 168,
+                "total": 184
+              },
+              "dose_unit": {
+                "correct": 163,
+                "total": 184
+              },
+              "route": {
+                "correct": 167,
+                "total": 179
+              },
+              "frequency": {
+                "correct": 169,
+                "total": 179
+              },
+              "status": {
+                "correct": 183,
+                "total": 185
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.7883211678832116,
+            "precision": 0.6506024096385542,
+            "recall": 1.0,
+            "entity_f1": 0.7228915662650602,
+            "tp": 30,
+            "fp": 23,
+            "fn": 0,
+            "attrs": {
+              "reaction": {
+                "correct": 24,
+                "total": 24
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.9735376044568246,
+            "precision": 0.9845070422535211,
+            "recall": 0.9628099173553719,
+            "entity_f1": 0.9888579387186629,
+            "tp": 355,
+            "fp": 0,
+            "fn": 8,
+            "attrs": {
+              "value": {
+                "correct": 344,
+                "total": 355
+              }
+            }
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 22,
+            "total": 23
+          },
+          "dose_change": {
+            "passed": 16,
+            "total": 17
+          },
+          "family_history": {
+            "passed": 43,
+            "total": 44
+          },
+          "negated": {
+            "passed": 30,
+            "total": 30
+          },
+          "new_med": {
+            "passed": 20,
+            "total": 20
+          },
+          "prior_value": {
+            "passed": 8,
+            "total": 8
+          },
+          "resolved": {
+            "passed": 7,
+            "total": 15
+          },
+          "stopped_med": {
+            "passed": 4,
+            "total": 10
+          },
+          "unit_conversion": {
+            "passed": 43,
+            "total": 57
+          }
+        },
+        "status": {
+          "ok": 50
+        },
+        "seconds_mean": 4.4318
+      },
+      "handwritten": {
+        "notes": 20,
+        "f1": 0.8937259923175417,
+        "precision": 0.9076723016905072,
+        "recall": 0.880201765447667,
+        "f1_ci": [
+          0.854368932038835,
+          0.9274832419256551
+        ],
+        "fields": {
+          "correct": 698,
+          "gold": 793,
+          "pred": 769
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.875,
+            "precision": 0.875,
+            "recall": 0.875,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 14,
+                "total": 20
+              },
+              "family_name": {
+                "correct": 16,
+                "total": 20
+              },
+              "gender": {
+                "correct": 20,
+                "total": 20
+              },
+              "birth_date": {
+                "correct": 20,
+                "total": 20
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.7678571428571429,
+            "precision": 0.8269230769230769,
+            "recall": 0.7166666666666667,
+            "entity_f1": 0.8035714285714286,
+            "tp": 45,
+            "fp": 7,
+            "fn": 15,
+            "attrs": {
+              "clinical_status": {
+                "correct": 41,
+                "total": 45
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.9293233082706768,
+            "precision": 0.965625,
+            "recall": 0.8956521739130435,
+            "entity_f1": 0.9640287769784173,
+            "tp": 67,
+            "fp": 0,
+            "fn": 5,
+            "attrs": {
+              "dose_value": {
+                "correct": 58,
+                "total": 63
+              },
+              "dose_unit": {
+                "correct": 54,
+                "total": 63
+              },
+              "frequency": {
+                "correct": 55,
+                "total": 63
+              },
+              "status": {
+                "correct": 64,
+                "total": 67
+              },
+              "route": {
+                "correct": 11,
+                "total": 11
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.8695652173913044,
+            "precision": 0.7692307692307693,
+            "recall": 1.0,
+            "entity_f1": 0.8333333333333334,
+            "tp": 15,
+            "fp": 6,
+            "fn": 0,
+            "attrs": {
+              "reaction": {
+                "correct": 15,
+                "total": 15
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.9144144144144145,
+            "precision": 0.8982300884955752,
+            "recall": 0.9311926605504587,
+            "entity_f1": 0.918918918918919,
+            "tp": 102,
+            "fp": 11,
+            "fn": 7,
+            "attrs": {
+              "value": {
+                "correct": 101,
+                "total": 102
+              }
+            }
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 11,
+            "total": 11
+          },
+          "dose_change": {
+            "passed": 5,
+            "total": 5
+          },
+          "family_history": {
+            "passed": 7,
+            "total": 7
+          },
+          "negated": {
+            "passed": 10,
+            "total": 10
+          },
+          "new_med": {
+            "passed": 8,
+            "total": 8
+          },
+          "prior_value": {
+            "passed": 4,
+            "total": 6
+          },
+          "resolved": {
+            "passed": 4,
+            "total": 5
+          },
+          "stopped_med": {
+            "passed": 2,
+            "total": 9
+          },
+          "unit_conversion": {
+            "passed": 10,
+            "total": 11
+          }
+        },
+        "status": {
+          "ok": 20
+        },
+        "seconds_mean": 3.755
+      }
+    }
+  },
+  "ollama:qwen2.5:3b": {
+    "sets": {
+      "all": {
+        "notes": 70,
+        "f1": 0.9010305905447408,
+        "precision": 0.9476944253269098,
+        "recall": 0.8587464920486436,
+        "f1_ci": [
+          0.8801049696572085,
+          0.918984648122815
+        ],
+        "fields": {
+          "correct": 2754,
+          "gold": 3207,
+          "pred": 2906
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.9571428571428572,
+            "precision": 0.9571428571428572,
+            "recall": 0.9571428571428572,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 64,
+                "total": 70
+              },
+              "family_name": {
+                "correct": 64,
+                "total": 70
+              },
+              "gender": {
+                "correct": 70,
+                "total": 70
+              },
+              "birth_date": {
+                "correct": 70,
+                "total": 70
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.9069212410501194,
+            "precision": 0.95,
+            "recall": 0.867579908675799,
+            "entity_f1": 0.9355608591885441,
+            "tp": 196,
+            "fp": 4,
+            "fn": 23,
+            "attrs": {
+              "clinical_status": {
+                "correct": 184,
+                "total": 196
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.8871681415929203,
+            "precision": 0.9616306954436451,
+            "recall": 0.8234086242299795,
+            "entity_f1": 0.9845559845559846,
+            "tp": 255,
+            "fp": 1,
+            "fn": 7,
+            "attrs": {
+              "dose_value": {
+                "correct": 170,
+                "total": 249
+              },
+              "dose_unit": {
+                "correct": 169,
+                "total": 249
+              },
+              "route": {
+                "correct": 169,
+                "total": 190
+              },
+              "frequency": {
+                "correct": 210,
+                "total": 242
+              },
+              "status": {
+                "correct": 230,
+                "total": 255
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.9820359281437125,
+            "precision": 0.9879518072289156,
+            "recall": 0.9761904761904762,
+            "entity_f1": 0.9777777777777777,
+            "tp": 44,
+            "fp": 1,
+            "fn": 1,
+            "attrs": {
+              "reaction": {
+                "correct": 38,
+                "total": 38
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.8943355119825708,
+            "precision": 0.9204035874439462,
+            "recall": 0.8697033898305084,
+            "entity_f1": 0.9019607843137255,
+            "tp": 414,
+            "fp": 32,
+            "fn": 58,
+            "attrs": {
+              "value": {
+                "correct": 407,
+                "total": 414
+              }
+            }
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 34,
+            "total": 34
+          },
+          "dose_change": {
+            "passed": 11,
+            "total": 22
+          },
+          "family_history": {
+            "passed": 51,
+            "total": 51
+          },
+          "negated": {
+            "passed": 40,
+            "total": 40
+          },
+          "new_med": {
+            "passed": 27,
+            "total": 28
+          },
+          "prior_value": {
+            "passed": 13,
+            "total": 14
+          },
+          "resolved": {
+            "passed": 12,
+            "total": 20
+          },
+          "stopped_med": {
+            "passed": 14,
+            "total": 19
+          },
+          "unit_conversion": {
+            "passed": 59,
+            "total": 68
+          }
+        },
+        "status": {
+          "ok": 70
+        },
+        "seconds_mean": 4.155285714285714
+      },
+      "template": {
+        "notes": 50,
+        "f1": 0.9168118466898955,
+        "precision": 0.9664830119375574,
+        "recall": 0.871996685998343,
+        "f1_ci": [
+          0.8966139954853273,
+          0.9352678571428573
+        ],
+        "fields": {
+          "correct": 2105,
+          "gold": 2414,
+          "pred": 2178
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.97,
+            "precision": 0.97,
+            "recall": 0.97,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 48,
+                "total": 50
+              },
+              "family_name": {
+                "correct": 46,
+                "total": 50
+              },
+              "gender": {
+                "correct": 50,
+                "total": 50
+              },
+              "birth_date": {
+                "correct": 50,
+                "total": 50
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.9549839228295821,
+            "precision": 0.9769736842105263,
+            "recall": 0.9339622641509434,
+            "entity_f1": 0.977491961414791,
+            "tp": 152,
+            "fp": 0,
+            "fn": 7,
+            "attrs": {
+              "clinical_status": {
+                "correct": 145,
+                "total": 152
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.8846899224806201,
+            "precision": 0.9630801687763713,
+            "recall": 0.818100358422939,
+            "entity_f1": 0.9893617021276596,
+            "tp": 186,
+            "fp": 0,
+            "fn": 4,
+            "attrs": {
+              "dose_value": {
+                "correct": 122,
+                "total": 186
+              },
+              "dose_unit": {
+                "correct": 120,
+                "total": 186
+              },
+              "route": {
+                "correct": 162,
+                "total": 179
+              },
+              "frequency": {
+                "correct": 156,
+                "total": 179
+              },
+              "status": {
+                "correct": 167,
+                "total": 186
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.9811320754716981,
+            "precision": 1.0,
+            "recall": 0.9629629629629629,
+            "entity_f1": 0.9830508474576272,
+            "tp": 29,
+            "fp": 0,
+            "fn": 1,
+            "attrs": {
+              "reaction": {
+                "correct": 23,
+                "total": 23
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.9271428571428572,
+            "precision": 0.9629080118694362,
+            "recall": 0.8939393939393939,
+            "entity_f1": 0.9371428571428572,
+            "tp": 328,
+            "fp": 9,
+            "fn": 35,
+            "attrs": {
+              "value": {
+                "correct": 321,
+                "total": 328
+              }
+            }
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 23,
+            "total": 23
+          },
+          "dose_change": {
+            "passed": 8,
+            "total": 17
+          },
+          "family_history": {
+            "passed": 44,
+            "total": 44
+          },
+          "negated": {
+            "passed": 30,
+            "total": 30
+          },
+          "new_med": {
+            "passed": 19,
+            "total": 20
+          },
+          "prior_value": {
+            "passed": 8,
+            "total": 8
+          },
+          "resolved": {
+            "passed": 8,
+            "total": 15
+          },
+          "stopped_med": {
+            "passed": 7,
+            "total": 10
+          },
+          "unit_conversion": {
+            "passed": 49,
+            "total": 57
+          }
+        },
+        "status": {
+          "ok": 50
+        },
+        "seconds_mean": 4.2236
+      },
+      "handwritten": {
+        "notes": 20,
+        "f1": 0.8533859303090071,
+        "precision": 0.8914835164835165,
+        "recall": 0.8184110970996217,
+        "f1_ci": [
+          0.7959183673469388,
+          0.8955034832172263
+        ],
+        "fields": {
+          "correct": 649,
+          "gold": 793,
+          "pred": 728
+        },
+        "sections": {
+          "patient": {
+            "f1": 0.925,
+            "precision": 0.925,
+            "recall": 0.925,
+            "entity_f1": 1.0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "attrs": {
+              "given_name": {
+                "correct": 16,
+                "total": 20
+              },
+              "family_name": {
+                "correct": 18,
+                "total": 20
+              },
+              "gender": {
+                "correct": 20,
+                "total": 20
+              },
+              "birth_date": {
+                "correct": 20,
+                "total": 20
+              }
+            }
+          },
+          "conditions": {
+            "f1": 0.7685185185185186,
+            "precision": 0.8645833333333334,
+            "recall": 0.6916666666666667,
+            "entity_f1": 0.8148148148148148,
+            "tp": 44,
+            "fp": 4,
+            "fn": 16,
+            "attrs": {
+              "clinical_status": {
+                "correct": 39,
+                "total": 44
+              }
+            }
+          },
+          "medications": {
+            "f1": 0.8950617283950618,
+            "precision": 0.9570957095709571,
+            "recall": 0.8405797101449275,
+            "entity_f1": 0.971830985915493,
+            "tp": 69,
+            "fp": 1,
+            "fn": 3,
+            "attrs": {
+              "dose_value": {
+                "correct": 48,
+                "total": 63
+              },
+              "dose_unit": {
+                "correct": 49,
+                "total": 63
+              },
+              "frequency": {
+                "correct": 54,
+                "total": 63
+              },
+              "status": {
+                "correct": 63,
+                "total": 69
+              },
+              "route": {
+                "correct": 7,
+                "total": 11
+              }
+            }
+          },
+          "allergies": {
+            "f1": 0.9836065573770492,
+            "precision": 0.967741935483871,
+            "recall": 1.0,
+            "entity_f1": 0.967741935483871,
+            "tp": 15,
+            "fp": 1,
+            "fn": 0,
+            "attrs": {
+              "reaction": {
+                "correct": 15,
+                "total": 15
+              }
+            }
+          },
+          "observations": {
+            "f1": 0.7889908256880734,
+            "precision": 0.7889908256880734,
+            "recall": 0.7889908256880734,
+            "entity_f1": 0.7889908256880734,
+            "tp": 86,
+            "fp": 23,
+            "fn": 23,
+            "attrs": {
+              "value": {
+                "correct": 86,
+                "total": 86
+              }
+            }
+          }
+        },
+        "traps": {
+          "brand_name": {
+            "passed": 11,
+            "total": 11
+          },
+          "dose_change": {
+            "passed": 3,
+            "total": 5
+          },
+          "family_history": {
+            "passed": 7,
+            "total": 7
+          },
+          "negated": {
+            "passed": 10,
+            "total": 10
+          },
+          "new_med": {
+            "passed": 8,
+            "total": 8
+          },
+          "prior_value": {
+            "passed": 5,
+            "total": 6
+          },
+          "resolved": {
+            "passed": 4,
+            "total": 5
+          },
+          "stopped_med": {
+            "passed": 7,
+            "total": 9
+          },
+          "unit_conversion": {
+            "passed": 10,
+            "total": 11
+          }
+        },
+        "status": {
+          "ok": 20
+        },
+        "seconds_mean": 3.9845
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+SNOMED    38341003   ours: Hypertensive disorder                         official: Hypertensive disorder
+ICD-10-CM I10        ours: Hypertensive disorder                         official: Essential (primary) hypertension
+SNOMED    44054006   ours: Diabetes mellitus type 2                      official: Type 2 diabetes mellitus
+ICD-10-CM E11.9      ours: Diabetes mellitus type 2                      official: Type 2 diabetes mellitus without complications
+SNOMED    55822004   ours: Hyperlipidemia                                official: Hyperlipidemia
+ICD-10-CM E78.5      ours: Hyperlipidemia                                official: Hyperlipidemia, unspecified
+SNOMED    195967001  ours: Asthma                                        official: Asthma
+ICD-10-CM J45.909    ours: Asthma                                        official: Unspecified asthma, uncomplicated
+SNOMED    13645005   ours: Chronic obstructive lung disease              official: Chronic obstructive pulmonary disease
+ICD-10-CM J44.9      ours: Chronic obstructive lung disease              official: Chronic obstructive pulmonary disease, unspecified
+SNOMED    235595009  ours: Gastroesophageal reflux disease               official: Gastroesophageal reflux disease
+ICD-10-CM K21.9      ours: Gastroesophageal reflux disease               official: Gastro-esophageal reflux disease without esophagitis
+SNOMED    40930008   ours: Hypothyroidism                                official: Hypothyroidism
+ICD-10-CM E03.9      ours: Hypothyroidism                                official: Hypothyroidism, unspecified
+SNOMED    396275006  ours: Osteoarthritis                                official: Osteoarthritis
+ICD-10-CM M19.90     ours: Osteoarthritis                                official: Unspecified osteoarthritis, unspecified site
+SNOMED    370143000  ours: Major depressive disorder                     official: Major depressive disorder
+ICD-10-CM F32.9      ours: Major depressive disorder                     official: Major depressive disorder, single episode, unspecified
+SNOMED    21897009   ours: Generalized anxiety disorder                  official: Generalized anxiety disorder
+ICD-10-CM F41.1      ours: Generalized anxiety disorder                  official: Generalized anxiety disorder
+SNOMED    49436004   ours: Atrial fibrillation                           official: Atrial fibrillation
+ICD-10-CM I48.91     ours: Atrial fibrillation                           official: Unspecified atrial fibrillation
+SNOMED    709044004  ours: Chronic kidney disease                        official: Chronic kidney disease
+ICD-10-CM N18.9      ours: Chronic kidney disease                        official: Chronic kidney disease, unspecified
+SNOMED    37796009   ours: Migraine                                      official: Migraine
+ICD-10-CM G43.909    ours: Migraine                                      official: Migraine, unspecified, not intractable, without status migrainosus
+SNOMED    53741008   ours: Coronary arteriosclerosis                     official: Coronary arteriosclerosis
+ICD-10-CM I25.10     ours: Coronary arteriosclerosis                     official: Atherosclerotic heart disease of native coronary artery without angina pectoris
+SNOMED    84114007   ours: Heart failure                                 official: Heart failure
+ICD-10-CM I50.9      ours: Heart failure                                 official: Heart failure, unspecified
+SNOMED    414916001  ours: Obesity                                       official: Obesity
+ICD-10-CM E66.9      ours: Obesity                                       official: Obesity, unspecified
+SNOMED    233604007  ours: Pneumonia                                     official: Pneumonia
+ICD-10-CM J18.9      ours: Pneumonia                                     official: Pneumonia, unspecified organism
+SNOMED    68566005   ours: Urinary tract infectious disease              official: Urinary tract infectious disease
+ICD-10-CM N39.0      ours: Urinary tract infectious disease              official: Urinary tract infection, site not specified
+SNOMED    87522002   ours: Iron deficiency anemia                        official: Iron deficiency anemia
+ICD-10-CM D50.9      ours: Iron deficiency anemia                        official: Iron deficiency anemia, unspecified
+SNOMED    78275009   ours: Obstructive sleep apnea syndrome              official: Obstructive sleep apnea syndrome
+ICD-10-CM G47.33     ours: Obstructive sleep apnea syndrome              official: Obstructive sleep apnea (adult) (pediatric)
+SNOMED    14669001   ours: Acute kidney injury                           official: Acute kidney injury
+ICD-10-CM N17.9      ours: Acute kidney injury                           official: Acute kidney failure, unspecified
+SNOMED    266569009  ours: Benign prostatic hyperplasia                  official: Benign prostatic hyperplasia
+ICD-10-CM N40.0      ours: Benign prostatic hyperplasia                  official: Benign prostatic hyperplasia without lower urinary tract symptoms
+SNOMED    11687002   ours: Gestational diabetes mellitus                 official: Gestational diabetes mellitus
+ICD-10-CM O24.419    ours: Gestational diabetes mellitus                 official: Gestational diabetes mellitus in pregnancy, unspecified control
+SNOMED    90560007   ours: Gout                                          official: Gout
+ICD-10-CM M10.9      ours: Gout                                          official: Gout, unspecified
+SNOMED    193462001  ours: Insomnia                                      official: Insomnia
+ICD-10-CM G47.00     ours: Insomnia                                      official: Insomnia, unspecified
+SNOMED    64859006   ours: Osteoporosis                                  official: Osteoporosis
+ICD-10-CM M81.0      ours: Osteoporosis                                  official: Age-related osteoporosis without current pathological fracture
+SNOMED    24079001   ours: Atopic dermatitis                             official: Atopic dermatitis
+ICD-10-CM L20.9      ours: Atopic dermatitis                             official: Atopic dermatitis, unspecified
+SNOMED    13746004   ours: Bipolar disorder                              official: Bipolar disorder
+ICD-10-CM F31.9      ours: Bipolar disorder                              official: Bipolar disorder, unspecified
+SNOMED    399068003  ours: Malignant tumor of prostate                   official: Malignant neoplasm of prostate
+ICD-10-CM C61        ours: Malignant tumor of prostate                   official: Malignant neoplasm of prostate
+SNOMED    363443007  ours: Malignant tumor of ovary                      official: Malignant neoplasm of ovary
+ICD-10-CM C56.9      ours: Malignant tumor of ovary                      official: Malignant neoplasm of unspecified ovary
+SNOMED    254837009  ours: Malignant neoplasm of breast                  official: Malignant neoplasm of breast
+ICD-10-CM C50.919    ours: Malignant neoplasm of breast                  official: Malignant neoplasm of unspecified site of unspecified female breast
+SNOMED    363406005  ours: Malignant tumor of colon                      official: Malignant neoplasm of colon
+ICD-10-CM C18.9      ours: Malignant tumor of colon                      official: Malignant neoplasm of colon, unspecified
+SNOMED    230690007  ours: Cerebrovascular accident                      official: Cerebrovascular accident
+ICD-10-CM I63.9      ours: Cerebrovascular accident                      official: Cerebral infarction, unspecified
+SNOMED    22298006   ours: Myocardial infarction                         official: Myocardial infarction
+ICD-10-CM I21.9      ours: Myocardial infarction                         official: Acute myocardial infarction, unspecified
+SNOMED    26929004   ours: Alzheimer's disease                           official: Alzheimer's disease
+ICD-10-CM G30.9      ours: Alzheimer's disease                           official: Alzheimer's disease, unspecified
+RxNorm    6809       ours: metformin                                     official: metformin
+RxNorm    1545653    ours: empagliflozin                                 official: empagliflozin
+RxNorm    274783     ours: insulin glargine                              official: insulin glargine
+RxNorm    29046      ours: lisinopril                                    official: lisinopril
+RxNorm    17767      ours: amlodipine                                    official: amlodipine
+RxNorm    52175      ours: losartan                                      official: losartan
+RxNorm    5487       ours: hydrochlorothiazide                           official: hydrochlorothiazide
+RxNorm    83367      ours: atorvastatin                                  official: atorvastatin
+RxNorm    36567      ours: simvastatin                                   official: simvastatin
+RxNorm    301542     ours: rosuvastatin                                  official: rosuvastatin
+RxNorm    10582      ours: levothyroxine                                 official: levothyroxine
+RxNorm    435        ours: albuterol                                     official: albuterol
+RxNorm    41126      ours: fluticasone                                   official: fluticasone
+RxNorm    69120      ours: tiotropium                                    official: tiotropium
+RxNorm    7646       ours: omeprazole                                    official: omeprazole
+RxNorm    40790      ours: pantoprazole                                  official: pantoprazole
+RxNorm    36437      ours: sertraline                                    official: sertraline
+RxNorm    321988     ours: escitalopram                                  official: escitalopram
+RxNorm    1827       ours: buspirone                                     official: buspirone
+RxNorm    6918       ours: metoprolol                                    official: metoprolol
+RxNorm    20352      ours: carvedilol                                    official: carvedilol
+RxNorm    1364430    ours: apixaban                                      official: apixaban
+RxNorm    11289      ours: warfarin                                      official: warfarin
+RxNorm    4603       ours: furosemide                                    official: furosemide
+RxNorm    1191       ours: aspirin                                       official: aspirin
+RxNorm    161        ours: acetaminophen                                 official: acetaminophen
+RxNorm    5640       ours: ibuprofen                                     official: ibuprofen
+RxNorm    25480      ours: gabapentin                                    official: gabapentin
+RxNorm    37418      ours: sumatriptan                                   official: sumatriptan
+RxNorm    24947      ours: ferrous sulfate                               official: ferrous sulfate
+RxNorm    723        ours: amoxicillin                                   official: amoxicillin
+RxNorm    7454       ours: nitrofurantoin                                official: nitrofurantoin
+RxNorm    8640       ours: prednisone                                    official: prednisone
+RxNorm    135447     ours: donepezil                                     official: donepezil
+RxNorm    3992       ours: epinephrine                                   official: epinephrine
+RxNorm    77492      ours: tamsulosin                                    official: tamsulosin
+RxNorm    519        ours: allopurinol                                   official: allopurinol
+RxNorm    2683       ours: colchicine                                    official: colchicine
+RxNorm    10737      ours: trazodone                                     official: trazodone
+RxNorm    5553       ours: hydroxyzine                                   official: hydroxyzine
+RxNorm    4815       ours: glyburide                                     official: glyburide
+RxNorm    3827       ours: enalapril                                     official: enalapril
+RxNorm    84857      ours: anastrozole                                   official: anastrozole
+RxNorm    46041      ours: alendronate                                   official: alendronate
+RxNorm    2193       ours: ceftriaxone                                   official: ceftriaxone
+RxNorm    18631      ours: azithromycin                                  official: azithromycin
+LOINC     8480-6     ours: Systolic blood pressure                       official: Systolic blood pressure
+LOINC     8462-4     ours: Diastolic blood pressure                      official: Diastolic blood pressure
+LOINC     8867-4     ours: Heart rate                                    official: Heart rate
+LOINC     9279-1     ours: Respiratory rate                              official: Respiratory rate
+LOINC     8310-5     ours: Body temperature                              official: Body temperature
+LOINC     29463-7    ours: Body weight                                   official: Body weight
+LOINC     59408-5    ours: Oxygen saturation in Arterial blood by Pulse oximetry official: Oxygen saturation in Arterial blood by Pulse oximetry
+LOINC     4548-4     ours: Hemoglobin A1c/Hemoglobin.total in Blood      official: Hemoglobin A1c/Hemoglobin.total in Blood
+LOINC     2345-7     ours: Glucose [Mass/volume] in Serum or Plasma      official: Glucose [Mass/volume] in Serum or Plasma
+LOINC     13457-7    ours: Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation official: Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation
+LOINC     2160-0     ours: Creatinine [Mass/volume] in Serum or Plasma   official: Creatinine [Mass/volume] in Serum or Plasma
+LOINC     3016-3     ours: Thyrotropin [Units/volume] in Serum or Plasma official: Thyrotropin [Units/volume] in Serum or Plasma
+LOINC     3084-1     ours: Urate [Mass/volume] in Serum or Plasma        official: Urate [Mass/volume] in Serum or Plasma
+SNOMED    26643006   ours: Oral route                                    official: Oral route
+SNOMED    447694001  ours: Respiratory tract route                       official: Respiratory tract route
+SNOMED    34206005   ours: Subcutaneous route                            official: Subcutaneous route
+SNOMED    78421000   ours: Intramuscular route                           official: Intramuscular route
+SNOMED    47625008   ours: Intravenous route                             official: ERROR <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+
+1 codes missing or failed. Read the list for names that don't match.
