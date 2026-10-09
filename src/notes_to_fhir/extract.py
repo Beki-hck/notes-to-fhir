@@ -64,6 +64,7 @@ class OllamaModel:
     model: str
     host: str = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
     use_schema: bool = True
+    use_format: bool = True  # False: no `format` at all (Gemma 3 replies "{}" in JSON mode)
     max_tokens: int = 1536
     timeout: float = 300
 
@@ -73,14 +74,16 @@ class OllamaModel:
 
     def generate(self, note: str) -> str:
         host = self.host if self.host.startswith("http") else f"http://{self.host}"
-        data = _post_json(f"{host.rstrip('/')}/api/chat", {
+        payload = {
             "model": self.model,
             "messages": [{"role": "system", "content": SYSTEM},
                          {"role": "user", "content": USER.format(note=note)}],
             "stream": False,
-            "format": json_schema() if self.use_schema else "json",
             "options": {"temperature": 0, "num_predict": self.max_tokens, "num_ctx": 8192},
-        }, {}, self.timeout)
+        }
+        if self.use_format:
+            payload["format"] = json_schema() if self.use_schema else "json"
+        data = _post_json(f"{host.rstrip('/')}/api/chat", payload, {}, self.timeout)
         return data["message"]["content"]
 
 
@@ -120,12 +123,12 @@ class BaselineModel:
         return extract(note).model_dump_json()
 
 
-def get_model(spec: str, use_schema: bool = True):
+def get_model(spec: str, use_schema: bool = True, use_format: bool = True):
     if spec == "baseline":
         return BaselineModel()
     provider, _, model = spec.partition(":")
     if provider == "ollama" and model:
-        return OllamaModel(model, use_schema=use_schema)
+        return OllamaModel(model, use_schema=use_schema, use_format=use_format)
     if provider == "anthropic" and model:
         return AnthropicModel(model)
     raise ValueError(f"Unknown model {spec!r}. Use baseline, ollama:<model> or anthropic:<model>.")

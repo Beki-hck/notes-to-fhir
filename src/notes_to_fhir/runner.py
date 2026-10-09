@@ -42,9 +42,10 @@ def load_predictions(path: Path) -> dict[str, dict]:
     return preds
 
 
-def run(spec: str, notes: list[dict], out: Path, use_schema: bool = True, log=print) -> dict[str, dict]:
+def run(spec: str, notes: list[dict], out: Path, use_schema: bool = True, log=print,
+        use_format: bool = True) -> dict[str, dict]:
     """Extract every note not already in predictions.jsonl. Safe to stop and re-run."""
-    model = get_model(spec, use_schema=use_schema)
+    model = get_model(spec, use_schema=use_schema, use_format=use_format)
     d = model_dir(out, spec)
     d.mkdir(parents=True, exist_ok=True)
     path = d / "predictions.jsonl"

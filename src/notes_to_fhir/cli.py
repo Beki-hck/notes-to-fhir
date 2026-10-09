@@ -64,7 +64,7 @@ def cmd_run(args):
         notes = notes[: args.limit]
     out = _out(args)
     for spec in args.model:
-        runner.run(spec, notes, out, use_schema=not args.no_schema)
+        runner.run(spec, notes, out, use_schema=not args.no_schema, use_format=not args.no_format)
     _report(out, runner.load_notes(args.set) if not args.limit else notes)
 
 
@@ -117,6 +117,8 @@ def main(argv=None):
     r.add_argument("-o", "--out", default="results")
     r.add_argument("--limit", type=int, help="only the first N notes (smoke test)")
     r.add_argument("--no-schema", action="store_true", help="ask Ollama for plain JSON instead of the schema")
+    r.add_argument("--no-format", action="store_true",
+                   help="send no output format at all and pull the JSON out of the reply (for Gemma 3)")
     r.set_defaults(func=cmd_run)
 
     p = sub.add_parser("report", help="rescore saved predictions without calling any model")
